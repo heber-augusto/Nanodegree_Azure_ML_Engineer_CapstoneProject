@@ -11,9 +11,10 @@ from azureml.core.run import Run
 from azureml.data.dataset_factory import TabularDatasetFactory
 
 def clean_data(data):
+    label = "DEATH_EVENT"
     # Clean and one hot encode data
     x_df = data.to_pandas_dataframe().dropna()
-    y_df = x_df.pop("y")
+    y_df = x_df.pop(label)
     return x_df, y_df
 
 
