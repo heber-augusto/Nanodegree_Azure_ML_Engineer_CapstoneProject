@@ -9,18 +9,18 @@ from sklearn.preprocessing import OneHotEncoder
 import pandas as pd
 from azureml.core.run import Run
 from azureml.data.dataset_factory import TabularDatasetFactory
+from azureml.core import Workspace, Experiment
 
 def clean_data(data):
-    label = "DEATH_EVENT"
+    label = "Class"
     # Clean and one hot encode data
     x_df = data.to_pandas_dataframe().dropna()
     y_df = x_df.pop(label)
     return x_df, y_df
 
-
-# Create TabularDataset using TabularDatasetFactory
-dataset_path = "https://raw.githubusercontent.com/heber-augusto/Nanodegree_Azure_ML_Engineer_CapstoneProject/master/data/heart_failure_clinical_records_dataset.csv"
-ds = TabularDatasetFactory.from_delimited_files(path = dataset_path)
+ws = Workspace.from_config()
+label = "Class"
+dataset = ws.datasets[label]
 
 x, y = clean_data(ds)
 
