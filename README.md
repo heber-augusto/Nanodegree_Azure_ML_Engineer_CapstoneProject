@@ -3,7 +3,12 @@
 This project is the final project of the Udacity Azure ML Nanodegree. In this project, I used Azure Machine Learning Studio to create and deploy a machine learning model and consumed its endpoint. 
 
 ## Project Set Up and Installation
-*OPTIONAL:* If your project has any special installation steps, this is where you should put it. To turn this project into a professional portfolio project, you are encouraged to explain how to set up this project in AzureML.
+To reproduce this project the user needs an account and access to Azure Machine Learning studio. With this account, it is necessary to:
+ 1. Copy [automl notebook](/automl.ipynb), [hyperdrive notebook](/hyperparameter_tuning.ipynb) and [the csv file inside the zip](/data/creditcard.csv.zip);
+ 2. Create a compute instance to run notebooks (during this project it was used two different compute instances, one for each notebook);
+ 3. 
+
+
 
 ## Dataset
 
@@ -41,14 +46,38 @@ The best performance model was a VotingEnsemble obtained with the execution of A
 
 ![Best AutoML model](/docs/automl_bestmodel.png?raw=true "Best AutoML model").
 
+The following image shows the running status from the RunDetails widget inside the notebook after the AutoMl completed the execution:
+
+![Best AutoML model](/docs/automl_rundetails.png?raw=true "AutoML Run details").
+
+All the parameters from the model can be find inside the 22° cell from the [notebook](/automl.ipynb). A [pkl file](/best_model.pkl) was also saved and can be used for fast deployment.
+
 ## Hyperparameter Tuning
-*TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
+
+The model used with HyperDrive is GradientBoostingClassifier. This model was one with best results with AutoML.
+
+The hyperparametes used here where the number of estimators, the learning rate and the max depth. This are some of the most important hyperparameters from this type of model.
+
+The termination policy was BanditPolicy. One of the benefit for the early stopping policy Bandit is that it is more suitable for resource savings.
+
+The AUC_weighted was set as a primary metric to compare with HyperDrive Run. This metric is more suitable for imbalanced dataset (which is common with fraud detection datasets).
 
 
 ### Results
-*TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
 
-*TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
+As shown by the image below, the best result was achieved with the following parameter values:
+ - number of estimators: 500;
+ - max depth: 3;
+ - learning rate: 0.7459. 
+ 
+ ![Best AutoML model](/docs/hyperdrive_bestrun.png?raw=true "Best AutoML model").
+ 
+
+As a possible improvement, other hyperparameters like min_samples_split, min_samples_leaf and max_features could be used inside a future work. Another possible improvment is using another model and other configurations and options (different like hyperparameters ranges).
+
+The following image shows the running status from the RunDetails widget inside the notebook after the AutoMl completed the execution:
+
+![hyperdrive results](/docs/hyperdrive_rundetails.png?raw=true "Run details").
 
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
@@ -58,6 +87,3 @@ The best performance model was a VotingEnsemble obtained with the execution of A
 - A working model
 - Demo of the deployed  model
 - Demo of a sample request sent to the endpoint and its response
-
-## Standout Suggestions
-*TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
