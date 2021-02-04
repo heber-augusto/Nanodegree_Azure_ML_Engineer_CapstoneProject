@@ -1,6 +1,12 @@
-# Heart Failure Prediction
+# Fraud Detection
 
-*TODO:* Write a short introduction to your project.
+This project is the final project of the Udacity Azure ML Nanodegree. In this project, I used Azure Machine Learning Studio to create and deploy a machine learning model and consumed its endpoint. 
+
+The dataset used to create the model is called [Credit Card Fraud Detection](https://www.kaggle.com/mlg-ulb/creditcardfraud) and contains transactions made by credit cards in September 2013 by european cardholders.
+
+The best performance model was a VotingEnsemble obtained with the execution of AutoML which resulted in 0.94661 of AUC_Weighted. The following image shows the best model obtained by AutoML execution and other models which were evaluated by it:
+
+![Best AutoML model](/docs/automl_bestmodel.png?raw=true "Best AutoML model")
 
 ## Project Set Up and Installation
 *OPTIONAL:* If your project has any special installation steps, this is where you should put it. To turn this project into a professional portfolio project, you are encouraged to explain how to set up this project in AzureML.
