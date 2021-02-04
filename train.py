@@ -13,25 +13,24 @@ from azureml.core import Workspace, Experiment
 def clean_data(data):
     label = "Class"
     # Clean and one hot encode data
-    x_df = data.to_pandas_dataframe().dropna()
+    x_df = data.dropna()
     y_df = x_df.pop(label)
     return x_df, y_df
 
-ws = Workspace.from_config()
-key = "creditcard"
-dataset = ws.datasets[key]
-
-x, y = clean_data(dataset)
-
-# Split data into train and test sets.
-x_train, x_test, y_train, y_test = train_test_split(x, y , test_size=0.33, random_state=42)
-
 run = Run.get_context()
-
-
-    
+  
 
 def main():
+    file_path = "creditcard.csv"
+    data = pd.read_csv(file_path) 
+    x, y = clean_data(data)
+
+    # Split data into train and test sets.
+    x_train, x_test, y_train, y_test = train_test_split(x, y , test_size=0.33, random_state=42)
+
+
+
+
     # Add arguments to script
     parser = argparse.ArgumentParser()
 
