@@ -3,12 +3,11 @@
 This project is the final project of the Udacity Azure ML Nanodegree. In this project, I used Azure Machine Learning Studio to create and deploy a machine learning model and consumed its endpoint. 
 
 ## Project Set Up and Installation
-To reproduce this project the user needs an account and access to Azure Machine Learning studio. With this account, it is necessary to:
+To reproduce this project results the user needs an account and access to Azure Machine Learning studio. With this account, it is necessary to:
+
  1. Copy [automl notebook](/automl.ipynb), [hyperdrive notebook](/hyperparameter_tuning.ipynb) and [the csv file inside the zip](/data/creditcard.csv.zip);
  2. Create a compute instance to run notebooks (during this project it was used two different compute instances, one for each notebook);
- 3. 
-
-
+ 3. Create a dataset using [the csv file inside the zip](/data/creditcard.csv.zip) and name it creditcard.
 
 ## Dataset
 
@@ -42,7 +41,7 @@ The AUC_weighted was set as a primary metric to compare with HyperDrive Run. The
 
 
 ### Results
-The best performance model was a VotingEnsemble obtained with the execution of AutoML which resulted in 0.94661 of AUC_Weighted. The following image shows the best model obtained by AutoML execution and other models which were evaluated by it:
+The best performance model was a VotingEnsemble obtained with the execution of AutoML which resulted in 0.9861 of AUC_Weighted. The following image shows the best model obtained by AutoML execution and other models which were evaluated by it:
 
 ![Best AutoML model](/docs/automl_bestmodel.png?raw=true "Best AutoML model").
 
@@ -65,25 +64,35 @@ The AUC_weighted was set as a primary metric to compare with HyperDrive Run. Thi
 
 ### Results
 
-As shown by the image below, the best result was achieved with the following parameter values:
+As shown by the image below, the best result (with AUC_weighted of 0.8787) was achieved with the following parameter values:
  - number of estimators: 500;
  - max depth: 3;
  - learning rate: 0.7459. 
  
  ![Best AutoML model](/docs/hyperdrive_bestrun.png?raw=true "Best AutoML model").
  
+As a possible improvement, other hyperparameters like min_samples_split, min_samples_leaf and max_features could be used inside a future work. Another possible improvment is using another model and other configurations and options (different like hyperparameters ranges). The following image shows one of the Hyperdrive plot results:
 
-As a possible improvement, other hyperparameters like min_samples_split, min_samples_leaf and max_features could be used inside a future work. Another possible improvment is using another model and other configurations and options (different like hyperparameters ranges).
+![hyperdrive plot results](/docs/hyperdrive_runresults.png?raw=true "Run details").
 
 The following image shows the running status from the RunDetails widget inside the notebook after the AutoMl completed the execution:
 
 ![hyperdrive results](/docs/hyperdrive_rundetails.png?raw=true "Run details").
 
 ## Model Deployment
-*TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
+
+The deployment code was executed with [automl notebook](/automl.ipynb) and can be find inside cells with title '''Model Deployment'''. A [sample input file](/data.json) was saved to help the test process but the end of the notebook also demonstrate how to use the test dataset and call a HTTP post using the python requests library.
 
 ## Screen Recording
-*TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
-- A working model
-- Demo of the deployed  model
-- Demo of a sample request sent to the endpoint and its response
+
+The following video demonstrates the model deployment and the model endpoint test:
+
+[![Video demonstrating the deployed model](https://img.youtube.com/vi/8Wsxr50wCiw/0.jpg?raw=true)](https://www.youtube.com/watch?v=8Wsxr50wCiw)
+
+
+## Possible Improvements
+
+Some possible improvements to the project could be:
+ - Adding a step of best model deployment for the AutoML pipeline;
+ - Test results after handling dataset unbalanced (eg.: using SMOTE method).  
+
