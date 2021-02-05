@@ -87,7 +87,7 @@ The deployment code was executed with [automl notebook](/automl.ipynb) and can b
 
 The following video demonstrates the model deployment and the model endpoint test:
 
-[![Video demonstrating the deployed model](https://img.youtube.com/vi/DieWOxo6NjE/0.jpg?raw=true)](https://www.youtube.com/watch?v=8Wsxr50wCiw)
+[![Video demonstrating the deployed model](https://img.youtube.com/vi/DieWOxo6NjE/0.jpg?raw=true)](https://www.youtube.com/watch?v=DieWOxo6NjE)
 
 
 ## Possible Improvements
