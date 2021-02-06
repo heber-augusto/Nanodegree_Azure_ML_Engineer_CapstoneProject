@@ -98,7 +98,7 @@ As shown by the image below, the best result (with AUC_weighted of 0.9112) was a
  - max depth: 3;
  - learning rate: 0.17245. 
  
- ![Best AutoML model](/docs/hyperdrive_bestrun.png?raw=true "Best AutoML model").
+ ![hyperdrive model](/docs/hyperdrive_bestrun.png?raw=true "hyperdrive model").
  
 As a possible improvement, other hyperparameters like min_samples_split, min_samples_leaf and max_features could be used inside a future work. Another possible improvment is using another model and other configurations and options (different like hyperparameters ranges). The following image shows one of the Hyperdrive plot results:
 
@@ -111,8 +111,11 @@ The following image shows the running status from the RunDetails widget inside t
 
 The following image shows the run Id and the hyperparameters values obtained with hyperdrive run:
 
-![Best Hyperdrive runid](/docs/hyperdrive_bestmodel_runid.png?raw=true "Best AutoML model Runid").
+![Best Hyperdrive runid](/docs/hyperdrive_bestmodel_runid.png?raw=true "Best Hyperdrive model Runid").
 
+The best model obtained from Hyperdrive run was registered as showed by the following image:
+
+![Registered Hyperdrive model](/docs/hyperdrive_model_registered.png?raw=true "Registered Hyperdrive model")
 
 ## Model Deployment
 
