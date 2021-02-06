@@ -66,7 +66,7 @@ The AUC_weighted was set as a primary metric to compare with HyperDrive Run. The
 
 
 ### Results
-The best performance model was a VotingEnsemble obtained with the execution of AutoML which resulted in 0.99038 of AUC_Weighted. The following image shows the best model obtained by AutoML execution and other models which were evaluated by it:
+The best performance model was a VotingEnsemble obtained with the execution of AutoML which resulted in 0.99963 of AUC_Weighted. The following image shows the best model obtained by AutoML execution and other models which were evaluated by it:
 
 ![Best AutoML model](/docs/automl_bestmodel.png?raw=true "Best AutoML model").
 
@@ -93,10 +93,10 @@ The AUC_weighted was set as a primary metric to compare with HyperDrive Run. Thi
 
 ### Results
 
-As shown by the image below, the best result (with AUC_weighted of 0.8787) was achieved with the following parameter values:
- - number of estimators: 500;
+As shown by the image below, the best result (with AUC_weighted of 0.9112) was achieved with the following parameter values:
+ - number of estimators: 100;
  - max depth: 3;
- - learning rate: 0.7459. 
+ - learning rate: 0.17245. 
  
  ![Best AutoML model](/docs/hyperdrive_bestrun.png?raw=true "Best AutoML model").
  
@@ -107,6 +107,12 @@ As a possible improvement, other hyperparameters like min_samples_split, min_sam
 The following image shows the running status from the RunDetails widget inside the notebook after the AutoMl completed the execution:
 
 ![hyperdrive results](/docs/hyperdrive_rundetails.png?raw=true "Run details").
+
+
+The following image shows the run Id and the hyperparameters values obtained with hyperdrive run:
+
+![Best Hyperdrive runid](/docs/hyperdrive_bestmodel_runid.png?raw=true "Best AutoML model Runid").
+
 
 ## Model Deployment
 
