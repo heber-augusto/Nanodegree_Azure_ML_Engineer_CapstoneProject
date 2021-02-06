@@ -2,7 +2,7 @@
 
 This project is the final project of the Udacity Azure ML Nanodegree. In this project, I used Azure Machine Learning Studio to create and deploy a machine learning model and consumed its endpoint. 
 
-The goal for this project is to create models using two different tools from ML Studio: Hyperdrive and Automl. After the model training process, the best model was deployed and tested using its endpoint.
+The goal for this project is to create models to predict credt card fraud from transactions using two different tools from ML Studio: Hyperdrive and Automl. After the model training process, the best model was deployed and tested using its endpoint.
 
 The entire process of model training, deployment and testing was completed during a 4 hour session of Microsoft Azure enviroment which is available inside Udacity platform.
 
