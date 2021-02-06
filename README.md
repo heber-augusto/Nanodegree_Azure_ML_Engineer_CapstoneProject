@@ -2,12 +2,35 @@
 
 This project is the final project of the Udacity Azure ML Nanodegree. In this project, I used Azure Machine Learning Studio to create and deploy a machine learning model and consumed its endpoint. 
 
+The goal for this project is to create models using two different tools from ML Studio: Hyperdrive and Automl. After the model training process, the best model was deployed and tested using its endpoint.
+
+## Architectural Diagram
+
+The following image demonstrate tools and Azure product used during this project:
+
+![Architectural Diagram](/docs/architecture.png?raw=true "Architectural Diagram from the project")
+
+Two Computer Instance were created and used to execute two different notebooks: one for Hyperdrive and another for Automl approach. These notebook used azure sdk to create and manipulate computer clusters, experiments, models and other contents. During the project the notebook was used to deploy and test the endpoint from the best model.
+
+The following two images shows the two compute instances and clusters used to run the notebook and to execute Hyperdrive and Automl experiments:
+
+![Compute Instances](/docs/computes.png?raw=true "Compute Instances")
+
+![Compute Instances](/docs/compute_clusters.png?raw=true "Compute Clusters")
+
+
 ## Project Set Up and Installation
 To reproduce this project results the user needs an account and access to Azure Machine Learning studio. With this account, it is necessary to:
 
- 1. Upload [automl notebook](/automl.ipynb), [hyperdrive notebook](/hyperparameter_tuning.ipynb), [train.py script](/train.py) and [the csv file inside the zip](/data/creditcard.csv.zip);
+ 1. Upload [automl notebook](/automl.ipynb), [hyperdrive notebook](/hyperparameter_tuning.ipynb), [train.py script](/train.py) and [the csv file inside the zip](/data/creditcard.csv.zip). The following image shows this initial setup:
+ 
+ ![Notebook setup](/docs/notebooks_setup.png?raw=true "Notebook setup")
+ 
  2. Create a compute instance to run notebooks (during this project it was used two different compute instances, one for each notebook);
- 3. Create a dataset using [the csv file inside the zip](/data/creditcard.csv.zip) and name it creditcard.
+ 
+ 3. Create a dataset using [the csv file inside the zip](/data/creditcard.csv.zip) and name it creditcard. The following image shows the dataset created during the project development:
+  
+  ![Dataset created](/docs/dataset_created.png?raw=true "Dataset created") 
 
 ## Dataset
 
@@ -41,9 +64,13 @@ The AUC_weighted was set as a primary metric to compare with HyperDrive Run. The
 
 
 ### Results
-The best performance model was a VotingEnsemble obtained with the execution of AutoML which resulted in 0.9861 of AUC_Weighted. The following image shows the best model obtained by AutoML execution and other models which were evaluated by it:
+The best performance model was a VotingEnsemble obtained with the execution of AutoML which resulted in 0.99038 of AUC_Weighted. The following image shows the best model obtained by AutoML execution and other models which were evaluated by it:
 
 ![Best AutoML model](/docs/automl_bestmodel.png?raw=true "Best AutoML model").
+
+The following image shows the run Id and some additional details from the best model:
+
+![Best AutoML runid](/docs/automl_bestmodel_runid.png?raw=true "Best AutoML model Runid").
 
 The following image shows the running status from the RunDetails widget inside the notebook after the AutoMl completed the execution:
 
