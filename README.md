@@ -90,7 +90,11 @@ The termination policy was BanditPolicy. One of the benefit for the early stoppi
 
 The AUC_weighted was set as a primary metric to compare with HyperDrive Run. This metric is more suitable for imbalanced dataset (which is common with fraud detection datasets).
 
-
+The range of each parameter that was passed to Hyperdrive run was:
+ - number of estimators: 100, 200 or 500;
+ - max depth: 1, 3 or 5;
+ - learning rate: between 0.1 and 1. 
+ 
 ### Results
 
 As shown by the image below, the best result (with AUC_weighted of 0.9112) was achieved with the following parameter values:
