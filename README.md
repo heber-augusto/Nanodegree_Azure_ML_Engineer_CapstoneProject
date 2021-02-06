@@ -78,7 +78,7 @@ The following image shows the running status from the RunDetails widget inside t
 
 ![Best AutoML model](/docs/automl_rundetails.png?raw=true "AutoML Run details").
 
-All the parameters from the model can be find inside the 22° cell from the [notebook](/automl.ipynb). A [pkl file](/best_model.pkl) was also saved and can be used for fast deployment.
+All the parameters from the best model can be find inside the Out[18] cell from the [notebook](/automl.ipynb). A [pkl file](/best_model.pkl) was also saved and can be used for fast deployment.
 
 ## Hyperparameter Tuning
 
@@ -121,7 +121,13 @@ The best model obtained from Hyperdrive run was registered as showed by the foll
 
 ![Registered Hyperdrive model](/docs/hyperdrive_model_registered.png?raw=true "Registered Hyperdrive model")
 
+All the parameters from the best model can be find inside the Out [21] cell from the [notebook](/hyperparameter_tuning.ipynb). A [pkl file](/best_model_hyperdrive.pkl) was also saved and can be used for fast deployment.
+
 ## Model Deployment
+
+The model VotingEnsemble is an ensemble model that combines the predictions from multiple other models. It is a technique that may be used to improve model performance, ideally achieving better performance than any single model used in the ensemble. For classification problems like this project, the predictions for each label are summed and the label with the majority vote is predicted. As showed by the following image (from the best AutoML json detail) VotingEnsemble model which was deployed combines LightGBM, XGBoostClassifier, LogistRegressor, GradientBoosting and ExtremeRandomTrees:
+
+![automl Bestmodel Detail](/docs/automl_bestmodel_detail.png?raw=true "Automl Bestmodel Detail").
 
 The deployment code was executed with [automl notebook](/automl.ipynb) and can be find inside cells with title '''Model Deployment'''. The following image shows the model deployment "Healthy" status after the process terminated:
 
