@@ -84,7 +84,11 @@ All the parameters from the best model can be find inside the Out[18] cell from 
 
 The model used with HyperDrive is GradientBoostingClassifier. This model was one with best results with AutoML.
 
-The hyperparametes used here where the number of estimators, the learning rate and the max depth. This are some of the most important hyperparameters from this type of model.
+The hyperparametes used here where the number of estimators, the learning rate and the max depth. These are some of the most important hyperparameters from this type of model. As explained inside [sklearn documentation](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html):
+
+ - number of estimators: is the number of boosting stages to perform. Gradient boosting is fairly robust to over-fitting so a large number usually results in better performance;
+ - learning rate: Learning rate shrinks the contribution of each tree by learning_rate;
+ - max depth: The maximum depth of the individual regression estimators. The maximum depth limits the number of nodes in the tree.
 
 The termination policy was BanditPolicy. One of the benefit for the early stopping policy Bandit is that it is more suitable for resource savings.
 
