@@ -4,6 +4,8 @@ This project is the final project of the Udacity Azure ML Nanodegree. In this pr
 
 The goal for this project is to create models using two different tools from ML Studio: Hyperdrive and Automl. After the model training process, the best model was deployed and tested using its endpoint.
 
+The entire process of model training, deployment and testing was completed during a 4 hour session of Microsoft Azure enviroment which is available inside Udacity platform.
+
 ## Architectural Diagram
 
 The following image demonstrate tools and Azure product used during this project:
