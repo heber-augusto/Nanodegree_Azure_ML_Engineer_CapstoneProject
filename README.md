@@ -5,7 +5,7 @@ This project is the final project of the Udacity Azure ML Nanodegree. In this pr
 ## Project Set Up and Installation
 To reproduce this project results the user needs an account and access to Azure Machine Learning studio. With this account, it is necessary to:
 
- 1. Copy [automl notebook](/automl.ipynb), [hyperdrive notebook](/hyperparameter_tuning.ipynb) and [the csv file inside the zip](/data/creditcard.csv.zip);
+ 1. Upload [automl notebook](/automl.ipynb), [hyperdrive notebook](/hyperparameter_tuning.ipynb), [train.py script](/train.py) and [the csv file inside the zip](/data/creditcard.csv.zip);
  2. Create a compute instance to run notebooks (during this project it was used two different compute instances, one for each notebook);
  3. Create a dataset using [the csv file inside the zip](/data/creditcard.csv.zip) and name it creditcard.
 
