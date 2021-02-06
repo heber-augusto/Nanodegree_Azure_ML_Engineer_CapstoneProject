@@ -129,7 +129,9 @@ All the parameters from the best model can be find inside the Out [21] cell from
 
 ## Model Deployment
 
-The model VotingEnsemble is an ensemble model that combines the predictions from multiple other models. It is a technique that may be used to improve model performance, ideally achieving better performance than any single model used in the ensemble. For classification problems like this project, the predictions for each label are summed and the label with the majority vote is predicted. As showed by the following image (from the best AutoML json detail) VotingEnsemble model which was deployed combines LightGBM, XGBoostClassifier, LogistRegressor, GradientBoosting and ExtremeRandomTrees:
+The model VotingEnsemble is an ensemble model that combines the predictions from multiple other models. It is a technique that may be used to improve model performance, ideally achieving better performance than any single model used in the ensemble. For classification problems like this project, the predictions for each label are summed and the label with the majority vote is predicted.
+
+As showed by the following image (that shows the best AutoML model json detail) VotingEnsemble model which was deployed combines LightGBM, XGBoostClassifier, LogistRegressor, GradientBoosting and ExtremeRandomTrees:
 
 ![automl Bestmodel Detail](/docs/automl_bestmodel_detail.png?raw=true "Automl Bestmodel Detail").
 
