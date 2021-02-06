@@ -81,7 +81,22 @@ The following image shows the running status from the RunDetails widget inside t
 
 ## Model Deployment
 
-The deployment code was executed with [automl notebook](/automl.ipynb) and can be find inside cells with title '''Model Deployment'''. A [sample input file](/data.json) was saved to help the test process but the end of the notebook also demonstrate how to use the test dataset and call a HTTP post using the python requests library.
+The deployment code was executed with [automl notebook](/automl.ipynb) and can be find inside cells with title '''Model Deployment'''. The following image shows the model deployment "Healthy" status after the process terminated:
+
+![model deployment status](/docs/model_deployment_status.png?raw=true "model deployment status").
+
+A [sample input file](/data.json) was saved to help the test process and the the notebook also demonstrate how to use the test dataset to create and call a HTTP post using the python requests library. 
+
+The content from the HTTP post is defined by the [score.py file](/score.py) which is used by the model deployed to define how the HTTP request is handled and how is the response created. The model deployed enpoint receives as an input a json containing a "data" field which has a list with at least one entry with all model input variables. The example bellow shows a possible content for the HTTP POST request.
+
+```json
+{"data": [{"Time": 41505.0, "V1": -16.5265065691231, "V2": 8.58497179585822, "V3": -18.649853185194498, "V4": 9.50559351508723, "V5": -13.793818527095699, "V6": -2.8324042993974703, "V7": -16.701694296045, "V8": 7.517343903709871, "V9": -8.50705863675898, "V10": -14.110184441545698, "V11": 5.29923634963938, "V12": -10.8340064814734, "V13": 1.67112025332681, "V14": -9.37385858364976, "V15": 0.36080564163161705, "V16": -9.899246540806661, "V17": -19.2362923697613, "V18": -8.39855199494575, "V19": 3.10173536885404, "V20": -1.51492343527852, "V21": 1.19073869481428, "V22": -1.1276700090206102, "V23": -2.3585787697881, "V24": 0.6734613289872371, "V25": -1.4136996745881998, "V26": -0.46276236139933, "V27": -2.01857524875161, "V28": -1.04280416970881, "Amount": 364.19}]}
+```
+As response the model returns a list where each position contains the model classification. The following example represents the HTTP response json for the sample input above:
+
+```json
+[1]
+```
 
 ## Screen Recording
 
